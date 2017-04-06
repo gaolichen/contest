@@ -1,0 +1,112 @@
+#include<iostream.h>
+int b[4][6]={{4,5,2,3,1,0},{5,4,2,3,0,1},
+{3,2,0,1,4,5},{2,3,1,0,4,5}};
+int x,y,m;
+void run()
+{
+	int i,j,step=0,a[6],temp[6];
+	char way[2100];
+	for(i=0;i<6;i++)
+		a[i]=i+1;
+	if(x==0&&y==0&&m==1)
+	{
+		cout<<"NS"<<endl;
+		return;
+	}
+	if(y>=0)
+		for(i=0;i<y;i++)
+		{
+			for(j=0;j<6;j++)
+				temp[j]=a[b[2][j]];
+			for(j=0;j<6;j++)
+				a[j]=temp[j];
+			way[step++]='N';
+		}
+	else 
+		for(i=0;i<-y;i++)
+		{
+			for(j=0;j<6;j++)
+				temp[j]=a[b[3][j]];
+			for(j=0;j<6;j++)
+				a[j]=temp[j];
+			way[step++]='S';
+		}
+	if(x>=0)
+		for(i=0;i<x;i++)
+		{
+			for(j=0;j<6;j++)
+				temp[j]=a[b[0][j]];
+			for(j=0;j<6;j++)
+				a[j]=temp[j];
+			way[step++]='E';
+		}
+	else 
+		for(i=0;i<-x;i++)
+		{
+			for(j=0;j<6;j++)
+				temp[j]=a[b[1][j]];
+			for(j=0;j<6;j++)
+				a[j]=temp[j];
+			way[step++]='W';
+		}
+	for(i=0;i<6;i++)
+		if(a[i]==m)break;
+	if(i==4)
+	{
+		way[step++]='E';
+		way[step++]='N';
+		way[step++]='W';
+		way[step++]='S';
+	}
+	if(i==3)
+	{
+		way[step++]='N';
+		way[step++]='W';
+		way[step++]='S';
+		way[step++]='E';
+	}
+	if(i==5)
+	{
+		way[step++]='W';
+		way[step++]='S';
+		way[step++]='E';
+		way[step++]='N';
+	}
+	if(i==2)
+	{
+		way[step++]='S';
+		way[step++]='E';
+		way[step++]='N';
+		way[step++]='W';
+	}
+	if(i==1)
+	{
+		way[step++]='E';
+		way[step++]='N';
+		way[step++]='W';
+		way[step++]='S';
+		way[step++]='S';
+		way[step++]='E';
+		way[step++]='N';
+		way[step++]='W';
+	}
+	way[step]='\0';
+	for(i=1;i<=step;i++)
+	{
+		cout<<way[i-1];
+//		if(i%80==0)cout<<endl;
+	}
+	cout<<endl;
+}
+int main()
+{
+	int i,t;
+	cin>>t;
+	for(i=0;i<t;i++)
+	{
+		cin>>x>>y>>m;
+		if(i)cout<<endl;
+		run();
+	}
+	return 0;
+}

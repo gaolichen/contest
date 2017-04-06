@@ -1,0 +1,55 @@
+                 Time limit: 1 Seconds   Memory limit: 32768K
+
+Problem Description
+
+ID ,short for identity ,is the name of the people in the BBS. Domain name, is 
+short for name of a country in the internet. One day,some students in the ZJU
+freecity BBS found that , there a great relation between a ID and a domain 
+name.We called a ID contain a domain name,if
+(1) the two letter of the domain name both can be found in the ID
+(2) the order of the letter in the domain name and ID are the same
+
+Take example of the ID gali:
+
+ga : domain name for Gobon
+gl : domain name for Greenland
+gi : domain name for Gibraltar
+al : domain name for Albania
+ai : domain name for Anguilla
+li : domain name for Liechtenstein
+
+We can say gali contains 6 domain names,ga,gl,gi,al,ai and li.
+
+We consider ID 1 is better than ID 2 if 
+(1) 1 contain more domain name than 2 or
+(2) 1 contain the same domain name as 2,and 1 is shorter than 2 or
+(3) 1 contain the same domain name as 2,and they are the same length,and 1 
+    is in the previous of 2 in alphabetical order
+
+Give n domain names ,you are asked to judge whether there are some IDs,whose
+length are not more than twelve,contain all the n domain names. 
+
+Input Specification
+
+A line contain n.
+Next n lines contain a domain name each. a domain name always contain two
+lowercase letters,and there is no space between the two letters.
+
+
+Output Specification
+
+If the ID not exist,output a "impossible", else output the best ID of them.
+
+Sample input
+
+6
+ga
+gl
+gi
+al
+ai
+li
+
+Sample output
+
+gali

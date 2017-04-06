@@ -1,0 +1,28 @@
+It is a well known fact that some people do not have their social
+completely enabled. One example is the lack of talent for calculating
+and intervals of time. This causes some people to always choose the
+way to go from one place to another, with the consequence that they
+late to whatever appointments they have, including weddings and
+C¨¦sar has this kind of problem. When he has to go from one point to
+he realizes that he has to visit many people, and thus always chooses
+longest path. One of C¨¦sar's friends, Felipe, has understood the
+of the problem. Felipe thinks that with the help of a computer he
+be able to calculate the time that C¨¦sar is going to need to arrive
+his destination. That way he could spend his time in something more
+Your goal is to help Felipe developing a program that computes the
+of the longest path that can be constructed in a given graph from a
+starting point (C¨¦sar's residence). You can assume that there is at
+one path from this starting point to any destination. Also, the graph
+no cycles (there is no path from any node to itself), so C¨¦sar will
+his destination in a finite time. In the same line of reasoning, nodes
+The input consists of a number of cases. The first line on each case
+a positive number n ( ) that specifies the number of points that
+After this, a second number s is provided, indicating the starting
+in C¨¦sar's journey ( ). Then, you are given a list of pairs of places
+and q, one pair per line, with the places on each line separated by
+As mentioned before, you can assume that the graphs provided will not
+For each test case you have to find the length of the longest path
+begins at the starting place. You also have to print the number of the
+place of such longest path. If there are several paths of maximum
+----------------------------------------------------------------------
+----------

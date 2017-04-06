@@ -1,0 +1,60 @@
+			    	Win the game
+                    Time limit: 1 Seconds   Memory limit: 32768K
+				  陈高鹂
+
+
+中文说明
+
+  A和B玩一个游戏：有n条线段，A和B轮流给线段染色，每次可以给同一个线段上连续得长度为2
+的未染色的一小段染色，染色的起点必须是离线段整数距离的地方。当某一方，无法染色的时候
+他就输了。
+
+Input
+
+有若干个case，每个case第一行是一个正整数n，第二行是n个正整数 a[0],a[1],...a[n-1]，
+表示n条线段的长度，a[i]得总和不超过50。
+
+Output
+
+如果A有必胜策略 输出"Yes",否这输出"No".
+
+
+
+
+english 版本
+
+
+A and B play a game. there are n lines, A and B color them by turns (A first). 
+One can only color a segment of a line, with length 2, which have not be colored,
+and the distance between a segment end point and the line's end point is a interger. 
+When one can not color, he lost. 
+
+Input
+
+There are several test cases. The first line of a case is a positive interger n, 
+the next line contain n positive intergers, represent the lengths of the n lines. 
+the sum of the lengths do not exceed 50. 
+
+Output
+
+If A can win output a "Yes", else output a "No". 
+
+Note: you should consider A and B a clever enough. 
+
+
+Sample input
+
+2
+2 4
+1
+9
+
+Sample output
+
+Yes
+No
+
+
+Author: Chen, Gaoli
+
+

@@ -1,0 +1,30 @@
+Time limit: 1 Seconds   Memory limit: 32768K
+
+Problem Description
+
+Give you two circles and a rectangle,Your task is to judge wheather the two 
+circlescan be put into the rectangle and no part of circles out of the 
+retangle.
+
+Input Specification
+
+There are several test cases.In every test cast,there are four float-point 
+numbera,b,r1,r2,where,a and b are two sides of the rectangle,r1 and r2 are 
+radius of the two circls.
+
+Output Specification
+
+Output a "Yes",if the circles can be put into the rectangle. Otherwise,output 
+a "No".In your program you can consider x<y,where x and y are float-point 
+numbers,if x<y+0.01.
+
+
+Sample Input
+
+5 4 1 1
+5 4 1.5 2
+
+Sample Output
+
+Yes
+No

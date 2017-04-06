@@ -1,0 +1,20 @@
+B国发生自然灾害, A国要发一批货物援助. 货物发送的车队要路经一些其他国家, 
+这些国家之间的交通采用一种特殊的管道. 这种管道是单向的. 而且无论距离长短
+每次通过都只要一个小时的时间. 并且这一个小时里, 就只能允许一辆车通过. 比如, 
+第一辆车可以在第一个小时通过, 第二辆车就不能在第一个小时通过这个通道, 但是
+可以在下一个小时通过. 处于国家安全的考虑, 车队经过的国家, 不允许A国的车队
+停留. 请编程求出, A国一次最多可以发送多少辆车. 
+输入
+
+有很多组. 每组描述一个有向的地图. 每组第一行两个正整数n, m. n<=30. 接下来m行, 
+每行两个整数i, j, 0<=i, j<n, 并且i!=j. 表示在i, j之间有一条从i到j的管道. 
+
+输出 
+输出A国一次可以发送的车的数量的最大值. 
+
+Country B is suffered a disaster, then country A wants to send some aid to country
+B. The cars that used to load the aids need to pass some other countrys. The trafic
+between these countries is a specion kind of pipe. These pipes are one way, and no 
+matter how long the pipe is, the car only need one hour to pass the pipe. It is not
+allow more than one car run in a pipe at the same moment. For the safe of country, 
+other country (except B) would not allow cars comes from A park. 

@@ -1,0 +1,67 @@
+#include<stdio.h>
+int a[20][110][3];
+void main()
+{
+	int i,j,m,n,t,min,k;
+	while(scanf("%d%d",&m,&n)==2)
+	{
+		for(i=1;i<=m;i++)
+			for(j=0;j<n;j++)
+			{
+				scanf("%d",&a[i][j][0]);
+				a[i][j][1]=a[i][j][0];
+				a[i][j][2]=0;
+			}
+		for(i=0;i<n;i++)
+		{
+		a[0][i][0]=a[0][i][1]=a[m][i][0];
+		a[m+1][i][0]=a[m+1][i][1]=a[1][i][0];
+		a[0][i][2]=a[m+1][i][2]=0;
+		}
+		for(i=n-2;i>=0;i--)
+		{
+			for(j=1;j<=m;j++)
+			{
+				min=1000;
+				for(k=j-1;k<j+2;k++)
+				{
+					if(a[k][i+1][1]<min)
+					{
+					min=a[k][i+1][1];
+					t=k;
+					}
+			else 
+			if(a[k][i+1][1]==min&&(!t||k==n+1))
+				t=k;
+				}
+				a[j][i][1]+=min;
+				a[j][i][2]=t;
+				if(j==1)
+				{
+				a[m+1][i][1]=a[j][i][1];
+				a[m+1][i][2]=t;
+				}
+			    if(j==m)
+				{
+				a[0][i][1]=a[j][i][1];
+				a[0][i][2]=t;
+				}
+			}
+		}
+		min=1000;
+		for(i=1;i<=m;i++)
+			if(a[i][0][1]<min)
+			{
+				min=a[i][0][1];
+				t=i;
+			}
+		for(i=0;i<n;i++)
+		{
+			if(t==0)t=m;
+			if(t==m+1)t=1;
+			printf("%d ",t);
+			t=a[t][i][2];
+		}
+		printf("\n%d\n",min);
+	}
+}
