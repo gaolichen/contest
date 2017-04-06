@@ -27,3 +27,16 @@
 *.exe
 *.out
 *.app
+
+# Project files
+*.dep
+*.dsp
+*.dsw
+*.mak
+*.ncb
+*.opt
+*.plg
+*.ilk
+*.pdb
+*.idb
+
