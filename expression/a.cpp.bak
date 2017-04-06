@@ -1,0 +1,80 @@
+#pragma warning (disable:4786)
+#define for if(0);else for
+#include<string>
+#include<vector>
+#include<iostream>
+#include<stack>
+#include<queue>
+using namespace std;
+#ifdef _DOUBLE
+typedef double T;
+#define isDig(a) ((a)>='0'&&(a)<='9'||(a)=='.')
+#else
+typedef int T;
+#define isDig(a) ((a)>='0'&&(a)<='9')
+#endif
+#define top(a) a.top();a.pop()
+string xpr,num;
+string prt;
+
+
+T calc1(T a,T b,char ch){
+	if(ch=='+')return a+b;
+	if(ch=='-')return a-b;
+	if(ch=='*')return a*b;
+	if(ch=='/')return a/b;
+	return T(0);
+}
+T calc(int i,stack<T> &skn,stack<char> &s){
+	if(xpr.length()==0){
+		if(num!="")skn.push(atoi(num.c_str()));
+		while(!skn.empty()&&!s.empty()){
+			T a,b;
+			a=top(skn);
+			b=top(skn);
+			char ch=top(s);
+			skn.push(calc1(a,b,ch));
+		}
+		return skn.top();
+	}
+	if(xpr[i]=='-'&&num.empty()||isDig(xpr[i])){
+		num+=xpr[i];return calc(k+1,skn,s);
+	}
+	if(!num.empty()){
+		skn.push(atoi(num.c_str()));
+		num="";
+	}
+	if(xpr[i]==')'){
+		while(1){
+			char ch=top(s);
+			if(s==')')break;
+			T a,b;a=top(skn);b=top(skn);
+			skn.push(calc1(a,b,ch));
+		}
+	}
+	else {
+		int a=prt.find(s[i])/2;
+		while(!s.empty()&&prt.find(s.top())/2>=a){
+			char ch=top(s);
+			T a,b;a=top(skn);b=top(skn);
+			skn.push(calc1(a,b,ch));
+		}
+	}
+	return calc(i+1,skn,s);
+}
+
+T expression(string s){
+	stack<T> skn;
+	stack<char> op;
+	isnum=0;xpr=s;
+	prt="+-*/^"
+	return calc(0,skn,op);
+}
+
+int main(){
+	string s;
+	while(cin>>s){
+		cout<<expression(s)<<endl;
+	}
+	return 0;
+}
